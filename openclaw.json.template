@@ -1,8 +1,8 @@
 {
   "_template_info": {
     "description": "OpenClaw Discord 配置模板 — 脱敏后的参考配置",
-    "usage": "复制此文件为 openclaw.json，然后替换所有 'your-xxx' 占位符为你的真实配置",
-    "warning": "不要直接提交包含真实 API Key / Token 的配置文件到 Git"
+    "usage": "复制此文件为 openclaw.json，然后替换所有 your-* 占位符为你的真实配置",
+    "warning": "不要把包含真实 API Key / Token / Discord ID 的配置提交到 Git"
   },
   "meta": {
     "lastTouchedVersion": "2026.3.13",
@@ -15,7 +15,7 @@
     "ALL_PROXY": "socks5://your-proxy-host:your-proxy-port",
     "NO_PROXY": "localhost,127.0.0.1,*.local,*.cn,192.168.0.0/16,10.0.0.0/8,*.aliyuncs.com,*.dashscope.aliyuncs.com",
     "OPENAI_API_KEY": "your-api-key-here",
-    "TAVILY_API_KEY": "your-api-key-here",
+    "TAVILY_API_KEY": "tvly-dev-your-tavily-key",
     "AGENT_BROWSER_ENGINE": "lightpanda"
   },
   "wizard": {
@@ -84,7 +84,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 262144,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 32768
           },
           {
             "id": "qwen3.5-plus",
@@ -101,7 +101,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 1000000,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 65536
           },
           {
             "id": "qwen3-max-2026-01-23",
@@ -117,7 +117,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 262144,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 65536
           },
           {
             "id": "qwen3-coder-next",
@@ -133,7 +133,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 262144,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 65536
           },
           {
             "id": "qwen3-coder-plus",
@@ -149,7 +149,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 1000000,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 65536
           },
           {
             "id": "glm-5",
@@ -165,7 +165,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 202752,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 16384
           },
           {
             "id": "glm-4.7",
@@ -181,7 +181,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 202752,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 16384
           },
           {
             "id": "MiniMax-M2.5",
@@ -197,7 +197,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 1000000,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 65536
           }
         ]
       },
@@ -219,7 +219,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 32768,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 8192
           }
         ]
       },
@@ -246,7 +246,7 @@
               "cacheWrite": 0
             },
             "contextWindow": 266000,
-            "maxTokens": "MTQ...your-discord-token"
+            "maxTokens": 32768
           }
         ]
       },
@@ -276,7 +276,7 @@
               "cacheWrite": 0.175
             },
             "contextWindow": 400000,
-            "maxTokens": "MTQ...your-discord-token",
+            "maxTokens": 128000,
             "compat": {
               "supportsPromptCache": true
             }
@@ -296,7 +296,7 @@
               "cacheWrite": 0.175
             },
             "contextWindow": 400000,
-            "maxTokens": "MTQ...your-discord-token",
+            "maxTokens": 128000,
             "compat": {
               "supportsPromptCache": true
             }
@@ -369,7 +369,7 @@
         "mode": "safeguard",
         "memoryFlush": {
           "enabled": true,
-          "softThresholdTokens": "MTQ...your-discord-token",
+          "softThresholdTokens": 30000,
           "prompt": "Distill this session to memory/YYYY-MM-DD.md. Focus on: 1) decisions made, 2) state changes, 3) lessons learned, 4) blockers encountered, 5) action items. If nothing worth remembering: NO_FLUSH"
         }
       },
@@ -798,7 +798,7 @@
       "streaming": "partial",
       "maxLinesPerMessage": 60,
       "dmPolicy": "pairing",
-      "defaultTo": "channel:1475430870318846048",
+      "defaultTo": "channel:your-default-channel-id",
       "threadBindings": {
         "enabled": true,
         "spawnSubagentSessions": true,
@@ -806,33 +806,33 @@
       },
       "accounts": {
         "default": {
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-1": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-1",
+                "your-user-id-2",
+                "your-user-id-3",
+                "your-user-id-4",
+                "your-user-id-5",
+                "your-user-id-6",
+                "your-user-id-7",
+                "your-user-id-8",
+                "your-user-id-9",
+                "your-user-id-10"
               ],
               "channels": {
-                "1477248229115560136": {
+                "your-channel-id-1": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 },
-                "1475430870318846048": {
+                "your-channel-id-2": {
                   "requireMention": true
                 },
-                "1478559268100902994": {
+                "your-channel-id-3": {
                   "requireMention": true
                 }
               },
@@ -841,29 +841,29 @@
           }
         },
         "xiaohongshu": {
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-2": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-11",
+                "your-user-id-12",
+                "your-user-id-13",
+                "your-user-id-14",
+                "your-user-id-15",
+                "your-user-id-16",
+                "your-user-id-17",
+                "your-user-id-18",
+                "your-user-id-19",
+                "your-user-id-20"
               ],
               "channels": {
-                "1475449942129508352": {
+                "your-channel-id-4": {
                   "requireMention": false
                 },
-                "1477248229115560136": {
+                "your-channel-id-5": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -873,29 +873,29 @@
           }
         },
         "trading": {
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-3": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-21",
+                "your-user-id-22",
+                "your-user-id-23",
+                "your-user-id-24",
+                "your-user-id-25",
+                "your-user-id-26",
+                "your-user-id-27",
+                "your-user-id-28",
+                "your-user-id-29",
+                "your-user-id-30"
               ],
               "channels": {
-                "1475449702412714116": {
+                "your-channel-id-6": {
                   "requireMention": false
                 },
-                "1477248229115560136": {
+                "your-channel-id-7": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -905,29 +905,29 @@
           }
         },
         "ainews": {
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-4": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-31",
+                "your-user-id-32",
+                "your-user-id-33",
+                "your-user-id-34",
+                "your-user-id-35",
+                "your-user-id-36",
+                "your-user-id-37",
+                "your-user-id-38",
+                "your-user-id-39",
+                "your-user-id-40"
               ],
               "channels": {
-                "1475854028855443607": {
+                "your-channel-id-8": {
                   "requireMention": false
                 },
-                "1477248229115560136": {
+                "your-channel-id-9": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -937,29 +937,29 @@
           }
         },
         "macro": {
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-5": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-41",
+                "your-user-id-42",
+                "your-user-id-43",
+                "your-user-id-44",
+                "your-user-id-45",
+                "your-user-id-46",
+                "your-user-id-47",
+                "your-user-id-48",
+                "your-user-id-49",
+                "your-user-id-50"
               ],
               "channels": {
-                "1477250257006891220": {
+                "your-channel-id-10": {
                   "requireMention": false
                 },
-                "1477248229115560136": {
+                "your-channel-id-11": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -971,29 +971,29 @@
         "butler": {
           "name": "管家蜘蛛",
           "enabled": true,
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-6": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-51",
+                "your-user-id-52",
+                "your-user-id-53",
+                "your-user-id-54",
+                "your-user-id-55",
+                "your-user-id-56",
+                "your-user-id-57",
+                "your-user-id-58",
+                "your-user-id-59",
+                "your-user-id-60"
               ],
               "channels": {
-                "1478559268100902994": {
+                "your-channel-id-12": {
                   "requireMention": true
                 },
-                "1477248229115560136": {
+                "your-channel-id-13": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -1005,29 +1005,29 @@
         "ops": {
           "name": "平台蜘蛛",
           "enabled": true,
-          "token": "your-api-key-here",
+          "token": "MTQ...your-discord-token",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
-            "1475430869719322726": {
+            "your-guild-id-7": {
               "requireMention": true,
               "users": [
-                "1475427916757078127",
-                "1475471703713775769",
-                "1475473262527123618",
-                "1475473662059614208",
-                "1475849755027312763",
-                "1476265945050906624",
-                "1477245368529064041",
-                "1477247169005096991",
-                "1482367969685278752",
-                "804689485686112267"
+                "your-user-id-61",
+                "your-user-id-62",
+                "your-user-id-63",
+                "your-user-id-64",
+                "your-user-id-65",
+                "your-user-id-66",
+                "your-user-id-67",
+                "your-user-id-68",
+                "your-user-id-69",
+                "your-user-id-70"
               ],
               "channels": {
-                "1482370774768685086": {
+                "your-channel-id-14": {
                   "requireMention": false
                 },
-                "1477248229115560136": {
+                "your-channel-id-15": {
                   "requireMention": true,
                   "ignoreOtherMentions": false
                 }
@@ -1045,7 +1045,7 @@
     "bind": "loopback",
     "auth": {
       "mode": "token",
-      "token": "your-api-key-here"
+      "token": "your-token-here"
     },
     "tailscale": {
       "mode": "off",
@@ -1100,7 +1100,7 @@
       "openclaw-mem0": {
         "enabled": true,
         "config": {
-          "apiKey": "your-api-key-here",
+          "apiKey": "your-secret-here",
           "userId": "sly",
           "autoCapture": true,
           "autoRecall": true,
@@ -1133,7 +1133,7 @@
         "enabled": false,
         "config": {
           "embedding": {
-            "apiKey": "your-api-key-here",
+            "apiKey": "your-secret-here",
             "baseUrl": "http://localhost:11434/v1",
             "model": "nomic-embed-text",
             "maxChars": 6000,
