@@ -1,0 +1,1212 @@
+{
+  "_template_info": {
+    "description": "OpenClaw Discord 配置模板 — 脱敏后的参考配置",
+    "usage": "复制此文件为 openclaw.json，然后替换所有 'your-xxx' 占位符为你的真实配置",
+    "warning": "不要直接提交包含真实 API Key / Token 的配置文件到 Git"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-16T02:01:19.391Z"
+  },
+  "env": {
+    "OPENROUTER_API_KEY": "your-api-key-here",
+    "HTTP_PROXY": "http://your-proxy-host:your-proxy-port",
+    "HTTPS_PROXY": "http://your-proxy-host:your-proxy-port",
+    "ALL_PROXY": "socks5://your-proxy-host:your-proxy-port",
+    "NO_PROXY": "localhost,127.0.0.1,*.local,*.cn,192.168.0.0/16,10.0.0.0/8,*.aliyuncs.com,*.dashscope.aliyuncs.com",
+    "OPENAI_API_KEY": "your-api-key-here",
+    "TAVILY_API_KEY": "your-api-key-here",
+    "AGENT_BROWSER_ENGINE": "lightpanda"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-16T02:01:19.363Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "defaultProfile": "openclaw"
+  },
+  "auth": {
+    "profiles": {
+      "openai-codex:default": {
+        "provider": "openai-codex",
+        "mode": "oauth"
+      },
+      "bailian": {
+        "provider": "bailian",
+        "mode": "api_key"
+      }
+    }
+  },
+  "acp": {
+    "enabled": true,
+    "dispatch": {
+      "enabled": true
+    },
+    "backend": "acpx",
+    "defaultAgent": "claude",
+    "allowedAgents": [
+      "pi",
+      "claude",
+      "opencode",
+      "gemini"
+    ],
+    "maxConcurrentSessions": 12,
+    "stream": {
+      "coalesceIdleMs": 300,
+      "maxChunkChars": 1200
+    },
+    "runtime": {
+      "ttlMinutes": 120
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "bailian": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "your-api-key-here",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "qwen3.5-plus",
+            "name": "qwen3.5-plus",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "qwen3-max-2026-01-23",
+            "name": "qwen3-max-2026-01-23",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "qwen3-coder-next",
+            "name": "qwen3-coder-next",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 262144,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "qwen3-coder-plus",
+            "name": "qwen3-coder-plus",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "glm-5",
+            "name": "glm-5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202752,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "glm-4.7",
+            "name": "glm-4.7",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202752,
+            "maxTokens": "MTQ...your-discord-token"
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 1000000,
+            "maxTokens": "MTQ...your-discord-token"
+          }
+        ]
+      },
+      "ollama": {
+        "baseUrl": "http://localhost:11434/v1",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3:8b",
+            "name": "qwen3:8b",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 32768,
+            "maxTokens": "MTQ...your-discord-token"
+          }
+        ]
+      },
+      "sub2api": {
+        "baseUrl": "https://gmn.chuangzuoli.com/v1",
+        "apiKey": "your-api-key-here",
+        "api": "openai-responses",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) OpenClaw/2026.2.14"
+        },
+        "models": [
+          {
+            "id": "gpt-5.3-codex",
+            "name": "gpt-5.3-codex",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 266000,
+            "maxTokens": "MTQ...your-discord-token"
+          }
+        ]
+      },
+      "gmn": {
+        "baseUrl": "https://gmn.chuangzuoli.com/v1",
+        "apiKey": "your-api-key-here",
+        "auth": "api-key",
+        "api": "openai-responses",
+        "headers": {
+          "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) OpenClaw/2026.2.14",
+          "Accept": "application/json"
+        },
+        "authHeader": true,
+        "models": [
+          {
+            "id": "gpt-5.3-codex",
+            "name": "GPT-5.3 Codex",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 1.75,
+              "output": 14,
+              "cacheRead": 0.175,
+              "cacheWrite": 0.175
+            },
+            "contextWindow": 400000,
+            "maxTokens": "MTQ...your-discord-token",
+            "compat": {
+              "supportsPromptCache": true
+            }
+          },
+          {
+            "id": "gpt-5.4",
+            "name": "GPT-5.4",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 1.75,
+              "output": 14,
+              "cacheRead": 0.175,
+              "cacheWrite": 0.175
+            },
+            "contextWindow": 400000,
+            "maxTokens": "MTQ...your-discord-token",
+            "compat": {
+              "supportsPromptCache": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "bailian/qwen3.5-plus",
+        "fallbacks": [
+          "bailian/kimi-k2.5",
+          "ollama/qwen3:8b"
+        ]
+      },
+      "models": {
+        "openrouter/openrouter/free": {},
+        "openrouter/stepfun/step-3.5-flash:free": {},
+        "openrouter/deepseek/deepseek-r1-0528:free": {},
+        "openrouter/qwen/qwen3-coder:free": {},
+        "openrouter/qwen/qwen3-next-80b-a3b-instruct:free": {},
+        "openrouter/meta-llama/llama-3.3-70b-instruct:free": {},
+        "openrouter/openai/gpt-oss-120b:free": {},
+        "openrouter/z-ai/glm-4.5-air:free": {},
+        "openrouter/mistralai/mistral-small-3.1-24b-instruct:free": {},
+        "openrouter/nvidia/nemotron-3-nano-30b-a3b:free": {},
+        "openai-codex/gpt-5.3-codex": {},
+        "openai-codex/gpt-5.1-codex-mini": {},
+        "openai-codex/gpt-5.1": {},
+        "openai-codex/gpt-5.2-codex": {},
+        "openai-codex/gpt-5.2": {},
+        "openai-codex/gpt-5.3-codex-spark": {},
+        "bailian/kimi-k2.5": {},
+        "bailian/qwen3-max-2026-01-23": {},
+        "bailian/qwen3-coder-next": {},
+        "bailian/qwen3-coder-plus": {},
+        "bailian/glm-5": {},
+        "bailian/glm-4.7": {},
+        "bailian/MiniMax-M2.5": {},
+        "sub2api/gpt-5.3-codex": {},
+        "openai/gpt-5.3-codex": {},
+        "gmn/gpt-5.3-codex": {
+          "alias": "GPT 5.3 Codex"
+        },
+        "gmn/gpt-5.4": {
+          "alias": "GPT 5.4"
+        },
+        "ollama/qwen3:8b": {
+          "alias": "Local Qwen3 8B"
+        },
+        "bailian/qwen3.5-plus": {}
+      },
+      "workspace": "/path/to/your/.openclaw/workspace",
+      "memorySearch": {
+        "enabled": true,
+        "sources": [
+          "memory",
+          "sessions"
+        ],
+        "provider": "local"
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "6h",
+        "keepLastAssistants": 2
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": "MTQ...your-discord-token",
+          "prompt": "Distill this session to memory/YYYY-MM-DD.md. Focus on: 1) decisions made, 2) state changes, 3) lessons learned, 4) blockers encountered, 5) action items. If nothing worth remembering: NO_FLUSH"
+        }
+      },
+      "thinkingDefault": "xhigh",
+      "timeoutSeconds": 1800,
+      "heartbeat": {
+        "model": "bailian/qwen3.5-plus",
+        "lightContext": true,
+        "isolatedSession": true
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "model": {
+          "primary": "bailian/qwen3.5-plus"
+        },
+        "maxConcurrent": 8,
+        "maxSpawnDepth": 2,
+        "maxChildrenPerAgent": 5,
+        "archiveAfterMinutes": 60,
+        "runTimeoutSeconds": 900
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "model": {
+          "primary": "gmn/gpt-5.4"
+        },
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "大龙虾",
+          "emoji": "🦞"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@大龙虾",
+            "@Zoe"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "edit",
+            "exec",
+            "sessions_send",
+            "sessions_spawn",
+            "message",
+            "subagents",
+            "browser"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "trading",
+        "name": "trading",
+        "workspace": "/path/to/your/.openclaw/workspace-trading",
+        "agentDir": "/path/to/your/.openclaw/agents/trading/agent",
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "交易蜘蛛",
+          "emoji": "🕷️"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@交易蜘蛛"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "exec",
+            "sessions_send",
+            "message",
+            "sessions_spawn",
+            "subagents",
+            "browser"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "ainews",
+        "name": "ainews",
+        "workspace": "/path/to/your/.openclaw/workspace-ainews",
+        "agentDir": "/path/to/your/.openclaw/agents/ainews/agent",
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "AI资讯蜘蛛",
+          "emoji": "📰"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@AI资讯"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "exec",
+            "sessions_send",
+            "message",
+            "browser",
+            "sessions_spawn",
+            "subagents"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "macro",
+        "name": "macro",
+        "workspace": "/path/to/your/.openclaw/workspace-macro",
+        "agentDir": "/path/to/your/.openclaw/agents/macro/agent",
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "MacroAgent",
+          "emoji": "🌍"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@MacroAgent",
+            "@Macro"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "exec",
+            "sessions_send",
+            "message",
+            "sessions_spawn",
+            "subagents",
+            "browser"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "content",
+        "name": "content",
+        "workspace": "/path/to/your/.openclaw/workspace-content",
+        "agentDir": "/path/to/your/.openclaw/agents/content/agent",
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "内容蜘蛛",
+          "emoji": "🎨"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@内容蜘蛛",
+            "@Content"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "exec",
+            "sessions_send",
+            "message",
+            "browser",
+            "sessions_spawn",
+            "subagents"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "butler",
+        "name": "butler",
+        "workspace": "/path/to/your/.openclaw/workspace-butler",
+        "agentDir": "/path/to/your/.openclaw/agents/butler/agent",
+        "heartbeat": {
+          "model": "bailian/qwen3.5-plus",
+          "every": "0m"
+        },
+        "identity": {
+          "name": "管家蜘蛛",
+          "emoji": "🏠"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@管家蜘蛛",
+            "@Butler"
+          ]
+        },
+        "subagents": {
+          "allowAgents": [
+            "*"
+          ]
+        },
+        "tools": {
+          "allow": [
+            "read",
+            "write",
+            "exec",
+            "sessions_send",
+            "message",
+            "sessions_spawn",
+            "browser"
+          ],
+          "exec": {
+            "host": "gateway",
+            "security": "full",
+            "ask": "off"
+          }
+        }
+      },
+      {
+        "id": "ops",
+        "name": "ops",
+        "workspace": "/path/to/your/.openclaw/workspace-ops",
+        "agentDir": "/path/to/your/.openclaw/agents/ops/agent",
+        "model": "gmn/gpt-5.4",
+        "heartbeat": {
+          "every": "60m",
+          "model": "bailian/qwen3.5-plus",
+          "prompt": "执行平台健康巡检：1)检查所有agent进程状态(ps aux|grep openclaw) 2)检查ACP僵尸进程(ps aux|grep claude-agent-acp) 3)检查acpx sessions中closed:false的条目 4)检查gateway.err.log最近1小时的错误数量和类型 5)检查Claude Code残留进程(ps aux|grep claude.*permission) 6)检查磁盘使用率(df -h /) 7)汇总健康状态(healthy/degraded/failed)，如有异常在ops频道播报"
+        },
+        "identity": {
+          "name": "平台蜘蛛 (Platform Spider)",
+          "theme": "平台守门人 — 盯住系统稳定性、状态真值和自动化边界的运维蜘蛛",
+          "emoji": "⚙️",
+          "avatar": "_(not set)"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "coding",
+    "deny": [],
+    "exec": {
+      "security": "full",
+      "ask": "off"
+    },
+    "sessions": {
+      "visibility": "all"
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "trading",
+      "match": {
+        "channel": "discord",
+        "accountId": "trading"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "discord",
+        "accountId": "default"
+      }
+    },
+    {
+      "agentId": "ainews",
+      "match": {
+        "channel": "discord",
+        "accountId": "ainews"
+      }
+    },
+    {
+      "agentId": "macro",
+      "match": {
+        "channel": "discord",
+        "accountId": "macro"
+      }
+    },
+    {
+      "agentId": "content",
+      "match": {
+        "channel": "discord",
+        "accountId": "xiaohongshu"
+      }
+    },
+    {
+      "agentId": "butler",
+      "match": {
+        "channel": "discord",
+        "accountId": "butler"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "ops",
+      "match": {
+        "channel": "discord",
+        "accountId": "ops"
+      }
+    }
+  ],
+  "messages": {
+    "queue": {
+      "mode": "collect",
+      "debounceMs": 200,
+      "cap": 20,
+      "drop": "summarize"
+    },
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": true,
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer",
+    "resetTriggers": [
+      "/new",
+      "/reset"
+    ],
+    "reset": {
+      "atHour": 5,
+      "idleMinutes": 30
+    },
+    "threadBindings": {
+      "enabled": true
+    },
+    "maintenance": {
+      "pruneAfter": "3d",
+      "maxDiskBytes": 104857600,
+      "highWaterBytes": 83886080
+    }
+  },
+  "cron": {
+    "maxConcurrentRuns": 8
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "self-improvement": {
+          "enabled": true
+        }
+      },
+      "installs": {
+        "self-improvement": {
+          "source": "path",
+          "sourcePath": "/path/to/your/.openclaw/skills/self-improving-agent/hooks/openclaw",
+          "installPath": "/path/to/your/.openclaw/hooks/self-improvement",
+          "installedAt": "2026-03-02T17:03:05.296Z",
+          "hooks": [
+            "self-improvement"
+          ]
+        }
+      }
+    }
+  },
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "commands": {
+        "nativeSkills": true
+      },
+      "proxy": "http://your-proxy-host:your-proxy-port",
+      "allowBots": "mentions",
+      "groupPolicy": "open",
+      "textChunkLimit": 1950,
+      "chunkMode": "newline",
+      "streaming": "partial",
+      "maxLinesPerMessage": 60,
+      "dmPolicy": "pairing",
+      "defaultTo": "channel:1475430870318846048",
+      "threadBindings": {
+        "enabled": true,
+        "spawnSubagentSessions": true,
+        "spawnAcpSessions": true
+      },
+      "accounts": {
+        "default": {
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                },
+                "1475430870318846048": {
+                  "requireMention": true
+                },
+                "1478559268100902994": {
+                  "requireMention": true
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "xiaohongshu": {
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1475449942129508352": {
+                  "requireMention": false
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "trading": {
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1475449702412714116": {
+                  "requireMention": false
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "ainews": {
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1475854028855443607": {
+                  "requireMention": false
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "macro": {
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1477250257006891220": {
+                  "requireMention": false
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "butler": {
+          "name": "管家蜘蛛",
+          "enabled": true,
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1478559268100902994": {
+                  "requireMention": true
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        },
+        "ops": {
+          "name": "平台蜘蛛",
+          "enabled": true,
+          "token": "your-api-key-here",
+          "groupPolicy": "open",
+          "streaming": "partial",
+          "guilds": {
+            "1475430869719322726": {
+              "requireMention": true,
+              "users": [
+                "1475427916757078127",
+                "1475471703713775769",
+                "1475473262527123618",
+                "1475473662059614208",
+                "1475849755027312763",
+                "1476265945050906624",
+                "1477245368529064041",
+                "1477247169005096991",
+                "1482367969685278752",
+                "804689485686112267"
+              ],
+              "channels": {
+                "1482370774768685086": {
+                  "requireMention": false
+                },
+                "1477248229115560136": {
+                  "requireMention": true,
+                  "ignoreOtherMentions": false
+                }
+              },
+              "ignoreOtherMentions": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "your-api-key-here"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "/path/to/your/.openclaw/skills",
+        "/path/to/your/.openclaw/skills/self-improving-agent"
+      ]
+    },
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "agent-browser": {
+        "enabled": true,
+        "env": {
+          "AGENT_BROWSER_ENGINE": "lightpanda"
+        }
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "acpx",
+      "discord",
+      "openclaw-mem0",
+      "spawn-interceptor",
+      "openclaw-mem-engine",
+      "openclaw-mem",
+      "openclaw-basic-memory"
+    ],
+    "load": {
+      "paths": [
+        "/path/to/your/.openclaw/extensions/spawn-interceptor"
+      ]
+    },
+    "slots": {
+      "memory": "openclaw-mem0"
+    },
+    "entries": {
+      "acpx": {
+        "enabled": true,
+        "config": {
+          "permissionMode": "approve-all",
+          "nonInteractivePermissions": "deny"
+        }
+      },
+      "openclaw-mem0": {
+        "enabled": true,
+        "config": {
+          "apiKey": "your-api-key-here",
+          "userId": "sly",
+          "autoCapture": true,
+          "autoRecall": true,
+          "topK": 5,
+          "searchThreshold": 0.55,
+          "enableGraph": false
+        }
+      },
+      "spawn-interceptor": {
+        "enabled": true
+      },
+      "openclaw-mem": {
+        "enabled": true,
+        "config": {
+          "captureMessage": false,
+          "redactSensitive": true,
+          "maxMessageLength": 500,
+          "episodes": {
+            "enabled": true,
+            "captureConversationUser": true,
+            "captureConversationAssistant": true,
+            "captureToolCall": true,
+            "captureToolResult": false,
+            "payloadCapBytes": 1024,
+            "maxSummaryLength": 200
+          }
+        }
+      },
+      "openclaw-mem-engine": {
+        "enabled": false,
+        "config": {
+          "embedding": {
+            "apiKey": "your-api-key-here",
+            "baseUrl": "http://localhost:11434/v1",
+            "model": "nomic-embed-text",
+            "maxChars": 6000,
+            "headChars": 500
+          },
+          "autoRecall": {
+            "enabled": true,
+            "selectionMode": "tier_first_v1",
+            "quotas": {
+              "mustMax": 3,
+              "niceMin": 2,
+              "unknownMax": 1
+            }
+          },
+          "autoCapture": {
+            "enabled": true,
+            "maxItemsPerTurn": 2,
+            "capturePreference": true,
+            "captureDecision": true,
+            "captureTodo": false,
+            "dedupeSimilarityThreshold": 0.92
+          },
+          "receipts": {
+            "enabled": true,
+            "verbosity": "low",
+            "maxItems": 3
+          },
+          "scopePolicy": {
+            "enabled": true,
+            "defaultScope": "global",
+            "validationMode": "normalize"
+          },
+          "budget": {
+            "enabled": true,
+            "maxChars": 1800,
+            "minRecentSlots": 1,
+            "overflowAction": "truncate_oldest"
+          }
+        }
+      },
+      "openclaw-basic-memory": {
+        "enabled": true,
+        "config": {
+          "project": "openclaw",
+          "memoryDir": "basic-memory/",
+          "memoryFile": "MEMORY.md",
+          "autoCapture": true,
+          "indexInterval": 60,
+          "debug": false
+        }
+      }
+    },
+    "installs": {
+      "spawn-interceptor": {
+        "source": "path",
+        "sourcePath": "/path/to/your/.openclaw/extensions/spawn-interceptor",
+        "installPath": "/path/to/your/.openclaw/extensions/spawn-interceptor",
+        "version": "2.3.0",
+        "installedAt": "2026-03-12T16:01:58.727Z"
+      }
+    }
+  },
+  "approvals": {
+    "exec": {
+      "enabled": false
+    }
+  },
+  "diagnostics": {
+    "cacheTrace": {
+      "enabled": true,
+      "includeMessages": false,
+      "includePrompt": true,
+      "includeSystem": true
+    }
+  }
+}

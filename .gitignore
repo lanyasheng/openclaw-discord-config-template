@@ -1,0 +1,40 @@
+# OpenClaw 配置 — .gitignore
+
+# 真实配置文件 (永远不要提交)
+openclaw.json
+.env
+
+# 凭证目录
+credentials/
+
+# 日志文件
+logs/
+*.log
+
+# 数据库
+*.db
+memory.db
+vector_store.db
+
+# 缓存
+.cache/
+__pycache__/
+*.pyc
+
+# 临时文件
+tmp/
+*.tmp
+*.bak
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (如果有)
+node_modules/
