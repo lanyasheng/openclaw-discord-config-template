@@ -47,15 +47,15 @@ def sanitize_secret(key: str, value):
     lower = key.lower()
     if lower == "token":
         if isinstance(value, str) and value.startswith("MTQ"):
-            return "MTQ...your-discord-token"
-        return "your-token-here"
+            return "<YOUR_DISCORD_BOT_TOKEN>"
+        return "<YOUR_TOKEN>"
     if "mem0" in lower:
-        return "m0-your-mem0-key"
+        return "<YOUR_MEM0_API_KEY>"
     if isinstance(value, str) and value.startswith("tvly"):
-        return "tvly-dev-your-tavily-key"
+        return "<YOUR_TAVILY_API_KEY>"
     if isinstance(value, str) and value.startswith("sk-"):
-        return "your-api-key-here"
-    return "your-secret-here"
+        return "<YOUR_API_KEY>"
+    return "<YOUR_SECRET>"
 
 
 class IdReplacer:

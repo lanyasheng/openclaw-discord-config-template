@@ -9,13 +9,13 @@
     "lastTouchedAt": "2026-03-16T02:01:19.391Z"
   },
   "env": {
-    "OPENROUTER_API_KEY": "your-api-key-here",
+    "OPENROUTER_API_KEY": "<YOUR_API_KEY>",
     "HTTP_PROXY": "http://your-proxy-host:your-proxy-port",
     "HTTPS_PROXY": "http://your-proxy-host:your-proxy-port",
     "ALL_PROXY": "socks5://your-proxy-host:your-proxy-port",
     "NO_PROXY": "localhost,127.0.0.1,*.local,*.cn,192.168.0.0/16,10.0.0.0/8,*.aliyuncs.com,*.dashscope.aliyuncs.com",
-    "OPENAI_API_KEY": "your-api-key-here",
-    "TAVILY_API_KEY": "tvly-dev-your-tavily-key",
+    "OPENAI_API_KEY": "<YOUR_API_KEY>",
+    "TAVILY_API_KEY": "<YOUR_TAVILY_API_KEY>",
     "AGENT_BROWSER_ENGINE": "lightpanda"
   },
   "wizard": {
@@ -66,7 +66,7 @@
     "providers": {
       "bailian": {
         "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
-        "apiKey": "your-api-key-here",
+        "apiKey": "<YOUR_API_KEY>",
         "api": "openai-completions",
         "models": [
           {
@@ -225,7 +225,7 @@
       },
       "sub2api": {
         "baseUrl": "https://gmn.chuangzuoli.com/v1",
-        "apiKey": "your-api-key-here",
+        "apiKey": "<YOUR_API_KEY>",
         "api": "openai-responses",
         "headers": {
           "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) OpenClaw/2026.2.14"
@@ -252,7 +252,7 @@
       },
       "gmn": {
         "baseUrl": "https://gmn.chuangzuoli.com/v1",
-        "apiKey": "your-api-key-here",
+        "apiKey": "<YOUR_API_KEY>",
         "auth": "api-key",
         "api": "openai-responses",
         "headers": {
@@ -806,7 +806,7 @@
       },
       "accounts": {
         "default": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -841,7 +841,7 @@
           }
         },
         "xiaohongshu": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -873,7 +873,7 @@
           }
         },
         "trading": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -905,7 +905,7 @@
           }
         },
         "ainews": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -937,7 +937,7 @@
           }
         },
         "macro": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -971,7 +971,7 @@
         "butler": {
           "name": "管家蜘蛛",
           "enabled": true,
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -1005,7 +1005,7 @@
         "ops": {
           "name": "平台蜘蛛",
           "enabled": true,
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "groupPolicy": "open",
           "streaming": "partial",
           "guilds": {
@@ -1045,7 +1045,7 @@
     "bind": "loopback",
     "auth": {
       "mode": "token",
-      "token": "your-token-here"
+      "token": "<YOUR_TOKEN>"
     },
     "tailscale": {
       "mode": "off",
@@ -1100,7 +1100,7 @@
       "openclaw-mem0": {
         "enabled": true,
         "config": {
-          "apiKey": "your-secret-here",
+          "apiKey": "<YOUR_SECRET>",
           "userId": "sly",
           "autoCapture": true,
           "autoRecall": true,
@@ -1133,7 +1133,7 @@
         "enabled": false,
         "config": {
           "embedding": {
-            "apiKey": "your-secret-here",
+            "apiKey": "<YOUR_SECRET>",
             "baseUrl": "http://localhost:11434/v1",
             "model": "nomic-embed-text",
             "maxChars": 6000,

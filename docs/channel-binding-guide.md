@@ -29,7 +29,7 @@
     "discord": {
       "accounts": {
         "trading": {
-          "token": "MTQ...trading-bot-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "guilds": {
             "guild-id": {
               "channels": {

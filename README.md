@@ -36,10 +36,10 @@ cp .env.example ~/.openclaw/.env
 
 | 占位符 | 说明 | 获取方式 |
 |--------|------|----------|
-| `your-api-key-here` | LLM API Key | OpenRouter / OpenAI / 阿里云 |
-| `MTQ...your-discord-token` | Discord Bot Token | Discord Developer Portal |
-| `your-gateway-token` | Gateway 认证 Token | 自动生成或手动设置 |
-| `your-mem0-key` | Mem0 API Key | Mem0 Dashboard |
+| `<YOUR_API_KEY>` | LLM API Key | OpenRouter / OpenAI / 阿里云 |
+| `<YOUR_DISCORD_BOT_TOKEN>` | Discord Bot Token | Discord Developer Portal |
+| `<YOUR_GATEWAY_TOKEN>` | Gateway 认证 Token | 自动生成或手动设置 |
+| `<YOUR_MEM0_API_KEY>` | Mem0 API Key | Mem0 Dashboard |
 | `/path/to/your/...` | 本地路径 | 你的实际路径 |
 | `your-proxy-host:your-proxy-port` | 代理配置 | 你的代理服务 |
 
@@ -121,7 +121,7 @@ openclaw-discord-config-template/
     "discord": {
       "accounts": {
         "trading": {
-          "token": "MTQ...your-discord-token",
+          "token": "<YOUR_DISCORD_BOT_TOKEN>",
           "guilds": {
             "your-guild-id": {
               "channels": {
@@ -159,7 +159,7 @@ openclaw-discord-config-template/
 2. **使用环境变量**
    ```bash
    # .env 文件
-   OPENCLAW_OPENROUTER_API_KEY=sk-or-v1-xxx
+   OPENCLAW_OPENROUTER_API_KEY=<YOUR_OPENROUTER_API_KEY>
    
    # openclaw.json 引用
    "env": {
@@ -210,3 +210,6 @@ MIT License — 跟 OpenClaw 主项目保持一致
 - [OpenClaw GitHub](https://github.com/openclaw/openclaw)
 - [Discord Developer Portal](https://discord.com/developers/applications)
 - [OpenClaw Discord 社区](https://discord.gg/clawd)
+/clawd)
+awd)
+/clawd)
